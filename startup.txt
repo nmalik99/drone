@@ -1,0 +1,14 @@
+dronekit-sitl copter --home=40.21793873615873,-74.91789240439404,0,180
+mavproxy.py --master tcp:127.0.0.1:5760  --out udp:127.0.0.1:14551 --out udp:192.168.0.169:14550
+
+
+virtualenv nm01 -p  /usr/bin/python3.9
+cd  nm01
+cd bin
+. activate
+sudo apt-get install python3.9-dev
+sudo apt install python3.9-distutils
+sudo apt-get install libxml2-dev libxslt1-dev
+
+Had to modify mavutil.py as per : https://github.com/ArduPilot/pymavlink/pull/466/commits/b500f5fdf0dad868e554ab80e56c039363e3bfb3
+
